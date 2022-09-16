@@ -17,6 +17,17 @@ namespace LearnReferences
 
             //The false value was copied to a new location in memory for anotherFalseValue to use
             bool anotherFalseValue = falseValue;
+
+            //References of Different Types
+            Dissertation diss = new Dissertation();
+            IFlippable fdiss = diss;
+            Book bdiss = diss;
+            fdiss.CurrentPage = 42;
+
+            //bdiss.CurrentPage = 43; this is an error
+            //fdiss.Stringify(); this is an error
+            bdiss.Stringify();
+            Console.WriteLine(fdiss == bdiss);
         }
     }
 }
